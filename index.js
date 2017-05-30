@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express()
 
+const dust = require('consolidate').dust
+app.engine('dust', dust)
+app.set('view engine', 'dust')
+
 app.get('/', function(req, res) {
-	res.send('This is the way!')
+	res.render('index', { title : 'This is the way!' })
 })
 
 app.listen(3000, function(){
