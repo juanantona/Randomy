@@ -2,6 +2,7 @@
   "name": "way",
   "version": "0.0.1",
   "dependencies": {
+    "consolidate": "^0.14.5",
     "express": "^4.14.0"
   }
 }
