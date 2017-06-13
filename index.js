@@ -59,7 +59,7 @@ var authenticate = (name, pass, callback) => {
 app.get('/', (req, res) => {
 	if (req.session.user) {
     res.locals.user = req.session.user.name
-    res.render('home')
+    res.render('home', { title:'This is the way!' })
   }
   else res.redirect('/login')  
 })

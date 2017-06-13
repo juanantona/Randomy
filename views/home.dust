@@ -5,7 +5,7 @@
 		<title>{title}</title>
 	</head>
 	<body>
-		<h2>Login</h2>
+		<h2>Home</h2>
 		{?user}
 			Bienvenido {user}, te has logado con exito
 			<a href="/logout"> Logout</a>
