@@ -3,23 +3,34 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>{title}</title>
+
+		<!-- CSS
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  	<link rel="stylesheet" href="/vendors/normalize.css">
+  	<link rel="stylesheet" href="/vendors/skeleton.css">
+  	
 	</head>
 	<body>
-		<h2>Login</h2>
-		<h4>{message}</h4>
-		<form method="post" action="/login">
-			<p>
-				<label>Nombre:</label>
-				<input type="text" name="username">
-			</p>
-			<p>	
-				<label>Contraseña:</label>
-				<input type="password" name="password">
-			</p>
-			
-			<input type="submit" value="login">	
-		</form>
-		
+		<div class="container">
+	    <div class="row">
+	      <div class="one-half column" style="margin-top: 25%">
+	        <h4>Login</h4>
+	        <p>{message}</p>
+	      	
+	      	<form method="post" action="/login">
+						<p>
+							<label>Nombre:</label>
+							<input type="text" name="username">
+						</p>
+						<p>	
+							<label>Contraseña:</label>
+							<input type="password" name="password">
+						</p>
+						<input type="submit" value="login">	
+					</form>
+	      </div>
+	    </div>
+	  </div>
 	</body>
 </html>
 
