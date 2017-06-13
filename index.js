@@ -26,6 +26,7 @@ app.use((req, res, next) => {
   res.locals.message = '';
   if (err) res.locals.message = err
   if (msg) res.locals.message = msg
+  console.log('user: ', req.session.user)  
   next();
 });
 
@@ -50,18 +51,21 @@ var authenticate = (name, pass, callback) => {
   // apply the same algorithm to the POSTed password, applying
   // the hash against the pass / salt, if there is a match we
   // found the user
-  if (hashPassword(pass) == user.pwd)  return callback(null, user)
+  if (hashPassword(pass) == user.pwd) return callback(null, user)
   else callback(new Error('wrong password'))
 }
 
 // Routes
 app.get('/', (req, res) => {
-	res.redirect('/login')
+	if (req.session.user) {
+    res.locals.user = req.session.user.name
+    res.render('home')
+  }
+  else res.redirect('/login')  
 })
 
 app.get('/login', (req, res) => {
-	console.log(req.session.user)
-	res.render('index', {title:'This is the way!'})
+	res.render('login', { title:'This is the way!' })
 })
 
 app.post('/login', (req, res) => {
@@ -75,7 +79,7 @@ app.post('/login', (req, res) => {
         // or in this case the entire user object
         req.session.user = user;
         req.session.success = 'Succes! Authenticated as ' + user.name
-        res.redirect('back');
+        res.redirect('/');
       });
     } else {
       req.session.error = 'Authentication failed, please check your username and password.'
@@ -88,7 +92,7 @@ app.get('/logout', (req, res) => {
   // destroy the user's session to log them out
   // will be re-created next request
   req.session.destroy(function(){
-    res.redirect('/');
+    res.redirect('/login');
   });
 });
 
