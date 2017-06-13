@@ -17,6 +17,8 @@ app.use(session({
   secret: 's3cr3t'
 }))
 
+app.use(express.static('stylesheets'));
+
 // Session-persisted message middleware
 app.use((req, res, next) => {
   var err = req.session.error;
