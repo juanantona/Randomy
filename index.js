@@ -84,6 +84,14 @@ app.post('/login', (req, res) => {
   });
 });
 
+app.get('/logout', (req, res) => {
+  // destroy the user's session to log them out
+  // will be re-created next request
+  req.session.destroy(function(){
+    res.redirect('/');
+  });
+});
+
 // Server up
 app.listen(3000, () => {
 	console.log('App up on port 3000!')
