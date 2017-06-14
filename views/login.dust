@@ -8,28 +8,29 @@
   	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
   	<link rel="stylesheet" href="/vendors/normalize.css">
   	<link rel="stylesheet" href="/vendors/skeleton.css">
-  	
+  	<link rel="stylesheet" href="/style.css">
+
 	</head>
 	<body>
-		<div class="container">
-	    <div class="row">
-	      <div class="one-half column" style="margin-top: 25%">
+		<div class="container login-container">
+	    <form class="login-form" method="post" action="/login">
+	    	<div class="row">
 	        <h4>Login</h4>
 	        <p>{message}</p>
 	      	
-	      	<form method="post" action="/login">
-						<p>
-							<label>Nombre:</label>
-							<input type="text" name="username">
-						</p>
-						<p>	
-							<label>Contraseña:</label>
-							<input type="password" name="password">
-						</p>
-						<input type="submit" value="login">	
-					</form>
+					<div class="twelve columns">
+						<label>Nombre:</label>
+						<input class="u-full-width" type="text" name="username" placeholder="Nombre">
+					</div>
+					<div class="twelve columns">	
+						<label>Contraseña:</label>
+						<input class="u-full-width" type="password" name="password" placeholder="Contraseña">
+					</div>
+					<div class="twelve columns">
+						<input class="button-primary" type="submit" value="login">	
+					</div>	
 	      </div>
-	    </div>
+			</form>
 	  </div>
 	</body>
 </html>
