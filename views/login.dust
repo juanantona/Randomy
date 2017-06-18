@@ -1,50 +1,25 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>{title}</title>
+{>"layout" /}
 
-		<!-- CSS
-  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  	<link rel="stylesheet" href="/vendors/normalize.css">
-  	<link rel="stylesheet" href="/vendors/skeleton.css">
-  	<link rel="stylesheet" href="/style.css">
+<main>		
+	<div class="container login-container">
+		<div class="row">
+			
+			<div class="one-third column">
+				<p class="home-title">Ramdonmy</p>
+				<p class="home-subtitle">The easiest way to make groups</p>
+	  	</div>
 
-	</head>
-	<body>
-		
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns">
-					<div class="nav">
-			      <ul>
-			        <li class="home"><a href="#">Home</a></li>
-			      </ul>
-			    </div>
-			  </div>
-			</div>    
-	  </div>  
-		
-		<div class="container login-container">
-	  	<div class="row">
-				
-				<div class="one-third column">
-					<p class="home-title">Ramdonmy</p>
-					<p class="home-subtitle">The easiest way to make groups</p>
-	    	</div>
-
-	    	<div class="two-thirds column">
-					<form class="login-form" method="post" action="/login">
-			      <h4>Come in</h4>
-			      <p>{message}</p>
-			    	<label>Name:</label>
-						<input class="u-full-width" type="text" name="username" placeholder="Type your username, please">
-						<label>Password:</label>
-						<input class="u-full-width" type="password" name="password" placeholder="Type your password, please">
-						<input class="button-primary login-btn" type="submit" value="login">	
-					</form>
-	    	</div>
-	  </div>
-	</body>
-</html>
-
+	  	<div class="two-thirds column">
+				<form class="login-form" method="post" action="/login">
+		      <h4>Come in</h4>
+		      <p>{message}</p>
+		    	<label>Name:</label>
+					<input class="u-full-width" type="text" name="username" placeholder="Type your username, please">
+					<label>Password:</label>
+					<input class="u-full-width" type="password" name="password" placeholder="Type your password, please">
+					<input class="button-primary login-btn" type="submit" value="login">	
+				</form>
+	  	</div>
+		</div>
+	</div>
+</main>

@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>{title}</title>
+{>"layout" /}
 
-	 	<!-- CSS
-  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  	<link rel="stylesheet" href="/vendors/normalize.css">
-  	<link rel="stylesheet" href="/vendors/skeleton.css">
-	
-	</head>
-	<body>
-		<div class="container">
-	    <div class="row">
-	      <div class="one-half column" style="margin-top: 25%">
-	        <h4>Home</h4>
-	        <p>{?user}Bienvenido {user}, te has logado con exito{/user} <a href="/logout">Logout</a>.</p>
-	      </div>
-	    </div>
-	  </div>
-	</body>
-</html>
+<main>	
+	<div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+        <h4>Home</h4>  
+      </div>
+    </div>
+  </div>
+</main>
