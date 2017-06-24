@@ -1,6 +1,9 @@
 {>"layout" /}
 
-<main>		
+<main class="main-login">		
+	
+	{>"top-nav-bar" /}
+	
 	<div class="container login-container">
 		<div class="row">
 			

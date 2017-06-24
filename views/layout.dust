@@ -12,21 +12,8 @@
 
 	</head>
 	<body>
-		
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns">
-					<div class="nav">
-			      <ul>
-			        <li class="home"><a href="#">Home</a></li>
-			        {?user}<li class="home">Bienvenido {user}, te has logado con exito. <a href="/logout">Logout</a></li>{/user}
-			      </ul>
-			    </div>
-			  </div>
-			</div>    
-	  </div>  
-		
+	
 		{+main/}		
-
+	
 	</body>
 </html>
