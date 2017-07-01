@@ -99,6 +99,6 @@ app.get('/logout', (req, res) => {
 });
 
 // Server up
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
 	console.log('App up on port 3000!')
 })
