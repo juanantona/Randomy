@@ -1,4 +1,52 @@
-/* HOME-TITLE
+/* MAIN STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.main-login{
+  background-color: #2b3137;
+  height: 100vh;
+}
+.main-home{
+  background-color: white;
+  height: 100vh;
+}
+
+/* TOP NAV BAR
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nav {
+  background-color: #24292e;
+  height: 50px;
+}
+.nav-message{
+  font-family: 'Oswald', sans-serif;
+  line-height: 50px;
+  color: white;
+}
+.nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  line-height: 50px; 
+}
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+.nav a:hover {
+  background-color: #005f5f;
+}
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
+/* HOME
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .home-title, .home-subtitle{
 	text-align: right;
@@ -37,90 +85,4 @@
 	.login-form {
 		width: 50%;
 	}
-}
-
-/* MAIN STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.main-login{
-  background-color: #2b3137;
-  height: 100vh;
-}
-
-.main-home{
-  background-color: white;
-  height: 100vh;
-}
-
-/* TOP NAV BAR
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.nav-message{
-  font-family: 'Oswald', sans-serif;
-  line-height: 50px;
-  color: white;
-}
-
-.nav {
-  background-color: #24292e;
-  height: 50px;
-}
-
-.nav ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  position: relative;
-}
-
-.nav li {
-  font-family: 'Oswald', sans-serif;
-  line-height: 50px; 
-}
- 
-.nav a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  transition: .3s background-color;
-}
- 
-.nav a:hover {
-  background-color: #005f5f;
-}
- 
-.nav a.active {
-  background-color: #fff;
-  color: #444;
-  cursor: default;
-}
- 
-@media screen and (min-width: 600px) {
- /* .nav li {
-    width: 500px;
-    border-bottom: none;
-    line-height: 50px;
-    font-size: 1.4em;
-  }*/
- 
-  /* Option 1 - Display Inline */
-  /*.nav li {
-    display: inline-block;
-    margin-right: -4px;
-  }*/
- 
-   Options 2 - Float
- /* .nav li {
-    float: left;
-  }
-  .nav ul {
-    overflow: auto;
-    width: 600px;
-    margin: 0 auto;
-  }
-  .nav {
-    background-color: #444;
-  }*/
-  
 }
