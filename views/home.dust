@@ -2,4 +2,29 @@
 
 <main class="main-home">
 	{>"top-nav-bar" /}
+
+	<div class="container">
+		<div class="row">
+			<div class="six columns">
+				<table class="u-full-width">
+				  <thead>
+				    <tr>
+				      <th>Name</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  	{#members}
+					    <tr>
+					      <td>{name}</td>
+					    </tr>
+				    {/members}
+				  </tbody>
+				</table>
+			</div>
+			<div class="six columns">
+					
+			</div>
+		</div>
+	</div>
+	
 </main>

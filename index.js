@@ -73,7 +73,8 @@ var authenticate = (name, pass, callback) => {
 // Routes
 app.get('/', (req, res) => {
 	if (req.session.user) {
-    res.locals.user = req.session.user.name
+    res.locals.user    = req.session.user.name
+    res.locals.members = db.members
     res.render('home', { title:'This is the way!' })
   }
   else res.redirect('/login')  
