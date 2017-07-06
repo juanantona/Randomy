@@ -33,7 +33,16 @@ app.use((req, res, next) => {
 });
 
 // DB
-const crypto  = require('crypto');
+const db     = require('./db.js')
+const crypto = require('crypto')
+
+var getUser = (name) => {
+	var user;
+	db.users.forEach( (dbUser) => { 
+		if (dbUser.name === name) user = dbUser
+	})
+	return user
+}
 
 var hashPassword = (password) => {
   var hashKey = 'S3KRE7'
@@ -41,19 +50,23 @@ var hashPassword = (password) => {
   return passwordHash;
 };
 
-var users = { admin: { name: 'admin' } }
-users.admin.pwd = hashPassword('123456')
+var setHashedPassword = (name, password) => {
+	var user = getUser(name)
+	user.password = hashPassword(password)
+}
+
+setHashedPassword('admin', '123')
 
 // Authenticate
 var authenticate = (name, pass, callback) => {
   if (!module.parent) console.log('authenticating %s:%s', name, pass)
-  var user = users[name]
+  var user = getUser(name)
   // query the db for the given username
   if (!user) return callback(new Error('cannot find user'))
   // apply the same algorithm to the POSTed password, applying
   // the hash against the pass / salt, if there is a match we
   // found the user
-  if (hashPassword(pass) == user.pwd) return callback(null, user)
+  if (hashPassword(pass) == user.password) return callback(null, user)
   else callback(new Error('wrong password'))
 }
 

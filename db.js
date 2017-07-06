@@ -1,0 +1,5 @@
+exports.users = [
+	{
+		name : 'admin'
+	}
+]
