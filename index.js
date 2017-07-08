@@ -6,6 +6,9 @@ const dust = require('consolidate').dust
 app.engine('dust', dust)
 app.set('view engine', 'dust')
 
+// Set port
+app.set('port', (process.env.PORT || 3000));
+
 // Middleware
 const session    = require('express-session');
 const bodyParser = require('body-parser')
@@ -113,6 +116,6 @@ app.get('/logout', (req, res) => {
 });
 
 // Server up
-app.listen(process.env.PORT || 3000, () => {
-	console.log('App up on port 3000!')
+app.listen(app.get('port'), () => {
+	console.log('App up on port', app.get('port'))
 })
