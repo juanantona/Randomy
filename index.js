@@ -39,18 +39,13 @@ app.use((req, res, next) => {
 const db  = require('./db.js')
 global.db = db
 
-// Routes
-app.get('/', (req, res) => {
-	if (req.session.user) {
-    res.locals.user    = req.session.user.name
-    res.locals.members = db.members
-    res.render('home', { title:'This is the way!' })
-  }
-  else res.redirect('/login')  
-})
-
+// Controllers
+let home_controller  = require('./controllers/home.js')
 let login_controller = require('./controllers/login.js')
 login_controller.setHashedPassword('admin', '123')
+
+// Routes
+app.get(  '/',       home_controller.show_home )
 app.get(  '/login',  login_controller.show_login )
 app.post( '/login',  login_controller.login )
 app.get(  '/logout', login_controller.logout )
