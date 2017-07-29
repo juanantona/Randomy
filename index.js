@@ -7,10 +7,10 @@ app.engine('dust', dust)
 app.set('view engine', 'dust')
 
 // Set port
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3000))
 
 // Middleware
-const session    = require('express-session');
+const session    = require('express-session')
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -20,7 +20,7 @@ app.use(session({
   secret: 's3cr3t'
 }))
 
-app.use(express.static('stylesheets'));
+app.use(express.static('stylesheets'))
 
 // Session-persisted message middleware
 app.use((req, res, next) => {
@@ -36,42 +36,8 @@ app.use((req, res, next) => {
 });
 
 // DB
-const db     = require('./db.js')
-const crypto = require('crypto')
-
-var getUser = (name) => {
-	var user;
-	db.users.forEach( (dbUser) => { 
-		if (dbUser.name === name) user = dbUser
-	})
-	return user
-}
-
-var hashPassword = (password) => {
-  var hashKey = 'S3KRE7'
-  var passwordHash = crypto.createHash('md5').update(password + hashKey).digest('hex');
-  return passwordHash;
-};
-
-var setHashedPassword = (name, password) => {
-	var user = getUser(name)
-	user.password = hashPassword(password)
-}
-
-setHashedPassword('admin', '123')
-
-// Authenticate
-var authenticate = (name, pass, callback) => {
-  if (!module.parent) console.log('authenticating %s:%s', name, pass)
-  var user = getUser(name)
-  // query the db for the given username
-  if (!user) return callback(new Error('cannot find user'))
-  // apply the same algorithm to the POSTed password, applying
-  // the hash against the pass / salt, if there is a match we
-  // found the user
-  if (hashPassword(pass) == user.password) return callback(null, user)
-  else callback(new Error('wrong password'))
-}
+const db  = require('./db.js')
+global.db = db
 
 // Routes
 app.get('/', (req, res) => {
@@ -83,37 +49,11 @@ app.get('/', (req, res) => {
   else res.redirect('/login')  
 })
 
-app.get('/login', (req, res) => {
-	res.render('login', { title:'This is the way!' })
-})
-
-app.post('/login', (req, res) => {
-  authenticate(req.body.username, req.body.password, (err, user) => {
-    if (user) {
-      // Regenerate session when signing in
-      // to prevent fixation
-      req.session.regenerate(() => {
-        // Store the user's primary key
-        // in the session store to be retrieved,
-        // or in this case the entire user object
-        req.session.user = user;
-        req.session.success = 'Succes! Authenticated as ' + user.name
-        res.redirect('/');
-      });
-    } else {
-      req.session.error = 'Authentication failed, please check your username and password.'
-      res.redirect('/login');
-    }
-  });
-});
-
-app.get('/logout', (req, res) => {
-  // destroy the user's session to log them out
-  // will be re-created next request
-  req.session.destroy(function(){
-    res.redirect('/login');
-  });
-});
+let login_controller = require('./controllers/login.js')
+login_controller.setHashedPassword('admin', '123')
+app.get(  '/login',  login_controller.show_login )
+app.post( '/login',  login_controller.login )
+app.get(  '/logout', login_controller.logout )
 
 // Server up
 app.listen(app.get('port'), () => {
