@@ -37,7 +37,6 @@ app.use((req, res, next) => {
 
 // DB
 const db  = require('./db.js')
-global.db = db
 
 // Controllers
 let home_controller  = require('./controllers/home.js')
