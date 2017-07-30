@@ -11,6 +11,7 @@ const db = require( './../db.js' )
 // Interface functions
 // **************************************************************************************************************
 let show_login = (req, res) => { 
+	res.locals.message = req.session.message
 	res.render('login', { title:'This is the way!' }) 
 }
 
@@ -21,11 +22,11 @@ let login = (req, res) => {
       req.session.regenerate(() => {
         // Store the user's primary key in the session store to be retrieved, or in this case the entire user object
         req.session.user = user;
-        req.session.success = 'Succes! Authenticated as ' + user.name
+        req.session.message = 'Succes! Authenticated as ' + user.name
         res.redirect('/');
       });
     } else {
-      req.session.error = 'Authentication failed, please check your username and password.'
+      req.session.message = 'Authentication failed, please check your username and password.'
       res.redirect('/login');
     }
   });
@@ -33,7 +34,7 @@ let login = (req, res) => {
 
 let logout = (req, res) => {
 	// destroy the user's session to log them out will be re-created next request
-  req.session.destroy(function(){
+  req.session.destroy(function() {
     res.redirect('/login');
   });
 }
@@ -58,8 +59,8 @@ let authenticate = (name, pass, callback) => {
 
 let getUser = (name) => {
 	var user;
-	db.users.forEach( (dbUser) => { 
-		if (dbUser.name === name) user = dbUser
+	db.users.forEach( (db_user) => { 
+		if (db_user.name === name) user = db_user
 	})
 	return user
 }
