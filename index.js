@@ -20,8 +20,8 @@ app.use( session({
   secret            : 's3cr3t'
 }))
 
-// Set static folder
-app.use(express.static('stylesheets'))
+// Set static files folder
+app.use(express.static('public'))
 
 // DB
 const db = require('./db.js')

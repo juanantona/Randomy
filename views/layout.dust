@@ -6,9 +6,9 @@
 
 		<!-- CSS
   	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  	<link rel="stylesheet" href="/vendors/normalize.css">
-  	<link rel="stylesheet" href="/vendors/skeleton.css">
-  	<link rel="stylesheet" href="/style.css">
+  	<link rel="stylesheet" href="stylesheets/vendors/normalize.css">
+  	<link rel="stylesheet" href="stylesheets/vendors/skeleton.css">
+  	<link rel="stylesheet" href="stylesheets/style.css">
 
 	</head>
 	<body>
