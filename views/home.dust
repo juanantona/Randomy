@@ -15,14 +15,24 @@
 				  <tbody>
 				  	{#members}
 					    <tr>
-					      <td>{name}</td>
+					      <td>
+									<input class="member" type="text" value="{name}" readonly>
+					      </td>
 					    </tr>
 				    {/members}
 				  </tbody>
 				</table>
 			</div>
 			<div class="six columns">
-					
+  			<label for="exampleRecipientInput">Number of members each group</label>
+	      <select class="u-full-width" id="exampleRecipientInput">
+	        <option value="1">1</option>
+	        <option value="2">2</option>
+	        <option value="3">3</option>
+	      </select>
+	      <input class="button-primary login-btn js-randomy" type="submit" value="Randomy">
+				<label for="exampleMessage">Groups</label>
+  			<textarea class="u-full-width js-groups-result" placeholder="Groups are…" id="exampleMessage"></textarea>
 			</div>
 		</div>
 	</div>
