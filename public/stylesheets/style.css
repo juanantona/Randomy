@@ -79,6 +79,11 @@
 	border-color: #2b3137 !important;
 }
 
+.js-member{
+  margin-bottom: 0;
+  border:none !important;
+}
+
 /* MEDIA QUERIES STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media (min-width: 1000px) {
