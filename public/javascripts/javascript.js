@@ -25,9 +25,9 @@ function createGroups(members, people_each_group) {
 	var random_index;
 
 	while (members.length > 0) {
-    random_index = Math.floor(members.length*Math.random());
     var group = [];
     while (group.length < people_each_group && members.length > 0) {
+    	random_index = Math.floor(members.length*Math.random());
     	group = group.concat(members.splice(random_index - 1, 1));
     }
     groups.push(group);
