@@ -16,7 +16,7 @@
 				  	{#members}
 					    <tr>
 					      <td>
-									<input class="member" type="text" value="{name}" readonly>
+									<input class="js-member" type="text" value="{name}" readonly>
 					      </td>
 					    </tr>
 				    {/members}
@@ -25,7 +25,7 @@
 			</div>
 			<div class="six columns">
   			<label for="exampleRecipientInput">Number of members each group</label>
-	      <select class="u-full-width" id="exampleRecipientInput">
+	      <select class="u-full-width" id="peopleEachGroup">
 	        <option value="1">1</option>
 	        <option value="2">2</option>
 	        <option value="3">3</option>
