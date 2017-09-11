@@ -32,7 +32,7 @@
 	      </select>
 	      <input class="button-primary login-btn js-randomy" type="submit" value="Randomy">
 				<label for="exampleMessage">Groups</label>
-  			<textarea class="u-full-width js-groups-result" placeholder="Groups are…" id="exampleMessage"></textarea>
+  			<ul class="js-gruop-list"></ul>
 			</div>
 		</div>
 	</div>

@@ -6,18 +6,28 @@ window.onload = () => {
 		let people_each_group = document.getElementById('peopleEachGroup').value;
 	  let members         = Array.from( document.getElementsByClassName('js-member') )
  	  let groups_textarea = document.getElementsByClassName('js-groups-result')[0]
- 	  let groups_result = ''
  	  
  	  var groups = createGroups(members, parseInt(people_each_group));
 
+ 	  let gruop_list = document.getElementsByClassName('js-gruop-list')[0];
+ 	  while (gruop_list.firstChild) { gruop_list.removeChild(gruop_list.firstChild) }
+
+ 	  var list_item_template = '<li>GROUP: '+ + '</li>'
+
  	  groups.forEach(function(group, index) {
-			group.forEach((member) => {
-	 	  	groups_result += 'Group ' + index + ' : '+ member.value + '\n'
+			var list_items = ''
+			var text = ''
+			group.forEach((member, idx) => {
+	 	  	list_items += member.value
+	 	  	if (idx !== group.length - 1) list_items += ', '
 	 	  })
+	 	  var li = document.createElement('li');
+	 	  var text = 'GROUP '+ (index + 1) + ': ' + list_items
+ 	  	li.appendChild(document.createTextNode(text))
+ 	  	gruop_list.appendChild(li);
  	  })
-	 	  
- 	  groups_textarea.value = groups_result
-	});
+     	  
+ 	});
 };
 
 function createGroups(members, people_each_group) {
