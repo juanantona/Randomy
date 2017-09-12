@@ -23,9 +23,6 @@ app.use( session({
 // Set static files folder
 app.use(express.static('public'))
 
-// DB
-const db = require('./db.js')
-
 // Middleware
 let middleware = require( './middleware/index.js' )
 app.use( middleware.log )
@@ -42,7 +39,18 @@ app.get(  '/login',  login_controller.show_login )
 app.post( '/login',  login_controller.login )
 app.get(  '/logout', login_controller.logout )
 
+// DB server up
+const MongoClient       = require('mongodb').MongoClient
+const db_connection_url = 'mongodb://127.0.0.1/randomy';
+
+MongoClient.connect(db_connection_url, (err, database) => {
+  if (err) return console.log(err)
+  console.log('DB server connected succesfully')
+  exports.db = database
+})
+
 // Server up
 app.listen(app.get('port'), () => {
-	console.log('App up on port', app.get('port'))
+	console.log('App server running on port', app.get('port'))
 })
+

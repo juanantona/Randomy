@@ -1,16 +1,16 @@
 'use strict'
 
-// Internal dependencies
-// **************************************************************************************************************
-const db = require( './../db.js' )
-
 // Interface functions
 // **************************************************************************************************************
 let show_home = (req, res) => { 
-	if (req.session.user) {
-    res.locals.user    = req.session.user.name
-    res.locals.members = db.members
-    res.render('home', { title:'This is the way!' })
+  const db = require( './../index.js' ).db
+  
+  if (req.session.user) {
+    res.locals.user = req.session.user.name
+    db.collection('members').find().toArray( (err, results) => {
+    	res.locals.members = results
+      res.render('home', { title:'This is the way!' })
+    })
   }
   else res.redirect('/login')  
 }
