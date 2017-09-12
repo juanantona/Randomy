@@ -7,6 +7,8 @@ let show_home = (req, res) => {
   
   if (req.session.user) {
     res.locals.user = req.session.user.name
+    res.locals.people_each_group = Array.from({ length: 10 }, (v, k) => k+1); 
+
     db.collection('members').find().toArray( (err, results) => {
     	res.locals.members = results
       res.render('home', { title:'This is the way!' })

@@ -26,9 +26,9 @@
 			<div class="six columns">
   			<label for="exampleRecipientInput">Number of members each group</label>
 	      <select class="u-full-width" id="peopleEachGroup">
-	        <option value="1">1</option>
-	        <option value="2">2</option>
-	        <option value="3">3</option>
+	      	{#people_each_group}
+	        	<option value="{.}">{.}</option>
+	        {/people_each_group}
 	      </select>
 	      <input class="button-primary login-btn js-randomy" type="submit" value="Randomy">
 				<label for="exampleMessage">Groups</label>
