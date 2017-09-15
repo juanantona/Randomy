@@ -4,10 +4,6 @@
 // **************************************************************************************************************
 const crypto = require( 'crypto' )
 
-// Internal dependencies
-// **************************************************************************************************************
-const db = require( './../db.js' )
-
 // Interface functions
 // **************************************************************************************************************
 let show_login = (req, res) => { 
@@ -48,21 +44,22 @@ let setHashedPassword = (name, password) => {
 // **************************************************************************************************************
 let authenticate = (name, pass, callback) => {
   if (!module.parent) console.log('authenticating %s:%s', name, pass)
-  var user = getUser(name)
-  // query the db for the given username
-  if (!user) return callback(new Error('cannot find user'))
-  // apply the same algorithm to the POSTed password, applying
-  // the hash against the pass / salt, if there is a match we found the user
-  if (hashPassword(pass) == user.password) return callback(null, user)
-  else callback(new Error('wrong password'))
+  var user = getUser(name, (error, user) => {
+    // query the db for the given username
+    if (!user) return callback(new Error('cannot find user'))
+    // apply the same algorithm to the POSTed password, applying
+    // the hash against the pass / salt, if there is a match we found the user
+    if (hashPassword(pass) == user.password) return callback(null, user)
+    else callback(new Error('wrong password'))
+  })
 }
 
-let getUser = (name) => {
-	var user;
-	db.users.forEach( (db_user) => { 
-		if (db_user.name === name) user = db_user
-	})
-	return user
+let getUser = (name, callback) => {
+	const db = require( './../index.js' ).db
+  
+  db.collection('users').find().toArray( (err, users) => {
+     return callback(err, users.filter((user) => { return user.name === name }).shift())
+  })
 }
 
 let hashPassword = (password) => {
