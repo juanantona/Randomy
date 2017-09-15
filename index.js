@@ -1,6 +1,8 @@
 const express = require( 'express' )
 const app     = express()
 
+const is_production = process.env.NODE_ENV === 'production'
+
 // Set template engine
 const dust    = require( 'consolidate' ).dust
 app.engine('dust', dust)
@@ -31,8 +33,6 @@ app.use( middleware.log )
 let home_controller  = require('./controllers/home.js')
 let login_controller = require('./controllers/login.js')
 
-login_controller.setHashedPassword('admin', '123')
-
 // Routes
 app.get(  '/',       home_controller.show_home )
 app.get(  '/login',  login_controller.show_login )
@@ -41,16 +41,17 @@ app.get(  '/logout', login_controller.logout )
 
 // DB server up
 const MongoClient       = require('mongodb').MongoClient
-const db_connection_url = 'mongodb://127.0.0.1/randomy';
+const db_connection_url = (is_production)? process.env.MONGODB_URI : 'mongodb://127.0.0.1/randomy'
 
 MongoClient.connect(db_connection_url, (err, database) => {
   if (err) return console.log(err)
   console.log('DB server connected succesfully')
   exports.db = database
+	// Server up
+	app.listen(app.get('port'), () => {
+		console.log('App server running on port', app.get('port'))
+	})
 })
 
-// Server up
-app.listen(app.get('port'), () => {
-	console.log('App server running on port', app.get('port'))
-})
+
 
