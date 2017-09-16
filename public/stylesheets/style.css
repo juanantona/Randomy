@@ -84,6 +84,22 @@
   border:none !important;
 }
 
+/* DASHBOARD
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.control-container {
+  padding-top: 15px;
+}
+
+.random-btn{
+  background-color: #2b3137 !important;
+  border-color: #2b3137 !important;
+  float: right;
+}
+
+.members-select{
+  width: 50%;
+}
+
 /* MEDIA QUERIES STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media (min-width: 1000px) {

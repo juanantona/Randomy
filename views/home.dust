@@ -23,14 +23,14 @@
 				  </tbody>
 				</table>
 			</div>
-			<div class="six columns">
-  			<label for="exampleRecipientInput">Number of members each group</label>
-	      <select class="u-full-width" id="peopleEachGroup">
+			<div class="six columns control-container">
+  			<label class="members-select"	for="exampleRecipientInput">Members each group</label>
+	      <select class="members-select" id="peopleEachGroup">
 	      	{#people_each_group}
 	        	<option value="{.}">{.}</option>
 	        {/people_each_group}
 	      </select>
-	      <input class="button-primary login-btn js-randomy" type="submit" value="Randomy">
+	      <input class="button-primary random-btn js-randomy" type="submit" value="Randomy">
 				<label for="exampleMessage">Groups</label>
   			<ul class="js-gruop-list"></ul>
 			</div>
