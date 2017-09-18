@@ -8,13 +8,12 @@
 		<div class="row">
 			
 			<div class="one-third column">
-				<p class="home-title">Randomy</p>
-				<p class="home-subtitle">The easiest way to make groups</p>
+				<p class="slogan">The easiest way to make groups</p>
 	  	</div>
 
 	  	<div class="two-thirds column">
 				<form class="login-form" method="post" action="/login">
-		      <h4>Come in</h4>
+		      <h4>Please, login</h4>
 		      <p>{message}</p>
 		    	<label>Name:</label>
 					<input class="u-full-width" type="text" name="username" placeholder="Type your username, please">

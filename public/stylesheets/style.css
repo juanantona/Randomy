@@ -9,11 +9,39 @@
   height: 100vh;
 }
 
+/* LOGIN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.slogan {
+  text-align: center;
+  font-size:1.5em;
+  color: orange;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  padding: 5%;
+  background: white;
+}
+
+.login-btn{
+  background-color: #2b3137 !important;
+  border-color: #2b3137 !important;
+}
+
 /* TOP NAV BAR
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nav-title {
+  color: orange;
+}
+
 .nav {
   background-color: #24292e;
-  height: 50px;
+  /*height: 50px;*/
 }
 .nav-message{
   font-family: 'Oswald', sans-serif;
@@ -46,48 +74,15 @@
   cursor: default;
 }
 
-/* HOME
+/* DASHBOARD
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.home-title, .home-subtitle{
-	text-align: right;
-	font-size: 3em;
-	color: orange;
-	margin-top: 10px;
-}
-
-.home-title{
-	font-size: 3.5em;
-}
-
-/* LOGIN
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.login-container {
-	margin-top: 50px;
-}
-
-.login-form {
-	margin-bottom: 0;
-	margin-left: auto;
-	margin-right: auto;
-	width: 75%;
-	padding: 5%;
-	background: white;
-}
-
-.login-btn{
-	background-color: #2b3137 !important;
-	border-color: #2b3137 !important;
+.control-container {
+  padding-top: 15px;
 }
 
 .js-member{
   margin-bottom: 0;
   border:none !important;
-}
-
-/* DASHBOARD
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.control-container {
-  padding-top: 15px;
 }
 
 .random-btn{
@@ -102,8 +97,30 @@
 
 /* MEDIA QUERIES STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media (min-width: 1000px) {
-	.login-form {
-		width: 50%;
+/* Larger than tablet */
+@media (min-width: 750px) {
+	.login-container {
+    margin-top: 15%;
+  }
+  .login-form {
+		width: 75%;
 	}
+  .slogan {
+    font-size: 2.5em;
+    text-align: right;
+  }
+  .nav-title {
+    font-size: 3em;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  .login-container {
+    margin-top: 8%;
+  }
+  .slogan {
+    font-size: 3.5em;
+    text-align: right;
+  }
 }

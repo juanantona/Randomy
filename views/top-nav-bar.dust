@@ -1,15 +1,8 @@
 <div class="nav">
 	<div class="container">
 		<div class="row">
-			<div class="ten columns">
-				<p class="nav-message">{?user}Wellcome {user}. You are logged.{:else} Please, login. {/user}</p>		
-			</div>
-			<div class="two columns">
-				{?user}
-					<ul>
-			      <li><a href="/logout">Logout</a></li>
-			    </ul>
-		    {/user}
+			<div class="twelve columns">
+				<h2 class="nav-title">Randomy</h2>
 			</div>
 		</div>
 	</div>
