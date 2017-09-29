@@ -3,25 +3,10 @@
 <main class="main-home">
 	{>"top-nav-bar" /}
 
-	<div class="container">
+	<div class="container main">
 		<div class="row">
-			<div class="six columns">
-				<table class="u-full-width">
-				  <thead>
-				    <tr>
-				      <th>Name</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				  	{#members}
-					    <tr>
-					      <td>
-									<input class="js-member" type="text" value="{name}" readonly>
-					      </td>
-					    </tr>
-				    {/members}
-				  </tbody>
-				</table>
+			<div class="six columns list-container">
+				{>"members" /}
 			</div>
 			<div class="six columns control-container">
   			<label class="members-select"	for="exampleRecipientInput">Members each group</label>
@@ -36,5 +21,18 @@
 			</div>
 		</div>
 	</div>
-	
+	<div class="container mobile-members-list">
+		<div class="row">
+			<div class="twelve colums">
+				<div class="mobile-members-close js-hide-members">
+					<span>&#x2715</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve colums">
+				{>"members" /}
+			</div>
+		</div>	
+	</div>	
 </main>

@@ -1,0 +1,16 @@
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{#members}
+	    <tr>
+	      <td>
+					<input class="js-member" type="text" value="{name}" readonly>
+	      </td>
+	    </tr>
+    {/members}
+  </tbody>
+</table>

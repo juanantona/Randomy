@@ -18,7 +18,9 @@
   margin-top: 10px;
   margin-bottom: 30px;
 }
-
+.login-container{
+  margin-top: 20px;
+}
 .login-form {
   margin-bottom: 0;
   margin-left: auto;
@@ -27,7 +29,6 @@
   padding: 5%;
   background: white;
 }
-
 .login-btn{
   background-color: #2b3137 !important;
   border-color: #2b3137 !important;
@@ -38,59 +39,100 @@
 .nav-title {
   color: orange;
 }
-
-.nav {
+.burger {
+  background: url(./../images/burger_menu.png);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 16px;
+  display: block;
+}
+.nav-container {
   background-color: #24292e;
-  /*height: 50px;*/
+  width: 100%;
+}
+.nav-menu{
+  -webkit-transition:all 0.2s ease-in-out;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+}
+.nav-menu._menu_open {
+  -webkit-transition:all 0.2s ease-in-out;
+  float: left;
+  height: 80px;
 }
 .nav-message{
   font-family: 'Oswald', sans-serif;
   line-height: 50px;
   color: white;
 }
-.nav ul {
+.nav-menu ul {
   list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  position: relative;
 }
-.nav li {
-  font-family: 'Oswald', sans-serif;
-  line-height: 50px; 
+.nav-menu li {
+  text-align: left;  
 }
-.nav a {
+.nav-menu li:hover {
+  background-color: #005f5f;
+}
+.nav-menu a {
   text-decoration: none;
-  color: #fff;
-  display: block;
-  transition: .3s background-color;
+  color: orange;
+  /*display: block;
+  transition: .3s background-color;*/
 }
-.nav a:hover {
+/*.nav a:hover {
   background-color: #005f5f;
 }
 .nav a.active {
   background-color: #fff;
   color: #444;
   cursor: default;
-}
+}*/
 
 /* DASHBOARD
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.main {
+  /*margin-top: 65px;*/
+}
+.list-container{
+  display: none;
+}
+.mobile-members-list {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  background: white;
+  z-index: 1;
+  position: absolute;
+  -webkit-transition:all 0.2s ease-in-out;
+}
+.mobile-members-list._open {
+  left: 0;
+}
+.mobile-members-close {
+  font-size: 1.5em;
+  
+  right: 0;
+  margin-right: 10px;
+}
+.mobile-members-close._open {
+  position: fixed;
+}
 .control-container {
   padding-top: 15px;
 }
-
 .js-member{
   margin-bottom: 0;
   border:none !important;
 }
-
 .random-btn{
   background-color: #2b3137 !important;
   border-color: #2b3137 !important;
   float: right;
 }
-
 .members-select{
   width: 50%;
 }
@@ -112,8 +154,13 @@
   .nav-title {
     font-size: 3em;
   }
+  .burger {
+    display: none;
+  }
+  .list-container{
+    display: block;
+  }
 }
-
 /* Larger than desktop */
 @media (min-width: 1000px) {
   .login-container {
