@@ -5,17 +5,19 @@
 				<h2 class="nav-title">Randomy</h2>
 			</div>
 			<div class="nav-wrap">
-				{?user}<a href="#" class="burger js-show-menu"></a>{/user}
-				<div class="nav-menu">
-					<ul>
-						<li>
-							<a href="#" class="js-show-members">Show members</a>
-						</li>
-						<li>
-							<a href="/logout">Logout</a>
-						</li>
-					</ul>
-				</div>
+				{?user}
+					<a href="#" class="burger js-show-menu"></a>
+					<div class="nav-menu">
+						<ul>
+							<li class="show-button">
+								<a href="#" class="js-show-members">Show members</a>
+							</li>
+							<li>
+								<a href="/logout">Logout</a>
+							</li>
+						</ul>
+					</div>
+				{/user}	
 			</div>
 		</div>
 	</div>
