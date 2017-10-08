@@ -5,7 +5,7 @@ window.onload = () => {
 	if (randomy_button) {
 		randomy_button.addEventListener('click', function(ev) {
 			let people_each_group = document.getElementById('peopleEachGroup').value;
-		  let members         = Array.from( document.getElementsByClassName('js-member') )
+		  let members         = Array.from( document.getElementsByClassName('list-container')[0].getElementsByClassName('js-member') )
 	 	  let groups_textarea = document.getElementsByClassName('js-groups-result')[0]
 	 	  
 	 	  var groups = createGroups(members, parseInt(people_each_group));
