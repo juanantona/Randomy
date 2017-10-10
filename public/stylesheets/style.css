@@ -53,6 +53,7 @@
   display: block;
 }
 .nav-container {
+  box-shadow: 0 0 20px 4px #24292e;
   background-color: #24292e;
   width: 100%;
   position: fixed;
