@@ -1,6 +1,6 @@
 {>"layout" /}
 
-<main class="main-home">
+<main class="main-dashboard">
 	{>"top-nav-bar" /}
 
 	<div class="container main">

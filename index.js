@@ -30,11 +30,11 @@ let middleware = require( './middleware/index.js' )
 app.use( middleware.log )
 
 // Controllers
-let home_controller  = require('./controllers/home.js')
-let login_controller = require('./controllers/login.js')
+let dashboard_controller = require('./controllers/dashboard.js')
+let login_controller     = require('./controllers/login.js')
 
 // Routes
-app.get(  '/',       home_controller.show_home )
+app.get(  '/',       dashboard_controller.show_dashboard )
 app.get(  '/login',  login_controller.show_login )
 app.post( '/login',  login_controller.login )
 app.get(  '/logout', login_controller.logout )

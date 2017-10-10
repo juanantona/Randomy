@@ -2,7 +2,7 @@
 
 // Interface functions
 // **************************************************************************************************************
-let show_home = (req, res) => { 
+let show_dashboard = (req, res) => { 
   const db = require( './../index.js' ).db
   
   if (req.session.user) {
@@ -11,7 +11,7 @@ let show_home = (req, res) => {
 
     db.collection('members').find().toArray( (err, results) => {
     	res.locals.members = results
-      res.render('home', { title:'This is the way!' })
+      res.render('dashboard', { title:'This is the way!' })
     })
   }
   else res.redirect('/login')  
@@ -19,7 +19,7 @@ let show_home = (req, res) => {
 
 // Module interface
 // **************************************************************************************************************
-exports.show_home = show_home
+exports.show_dashboard = show_dashboard
 
 
 
