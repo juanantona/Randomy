@@ -1,26 +1,31 @@
 {>"layout" /}
 
 <main class="main-dashboard">
-	{>"top-nav-bar" /}
+	
+	{>"navigation-bar" /}
 
-	<div class="container main">
+	<div class="container dashboard-container">
 		<div class="row">
-			<div class="six columns list-container">
+			
+			<div class="six columns members-list-container">
 				{>"members" /}
 			</div>
-			<div class="six columns control-container">
+			
+			<div class="six columns random-control-container">
   			<label class="members-select"	for="exampleRecipientInput">Members each group</label>
 	      <select class="members-select" id="peopleEachGroup">
 	      	{#people_each_group}
 	        	<option value="{.}">{.}</option>
 	        {/people_each_group}
 	      </select>
+	      
 	      <input class="button-primary random-btn js-randomy" type="submit" value="Randomy">
 				<label for="exampleMessage">Groups</label>
   			<ul class="js-gruop-list"></ul>
 			</div>
 		</div>
 	</div>
+	
 	<div class="container mobile-members-list">
 		<div class="row">
 			<div class="twelve colums">

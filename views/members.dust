@@ -8,7 +8,7 @@
   	{#members}
 	    <tr>
 	      <td>
-					<input class="js-member" type="text" value="{name}" readonly>
+					<input class="list-member js-member" type="text" value="{name}" readonly>
 	      </td>
 	    </tr>
     {/members}

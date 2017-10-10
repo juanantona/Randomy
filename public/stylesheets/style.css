@@ -1,12 +1,12 @@
 /* MAIN STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.main-login{
+.main-login {
   background-color: #2b3137;
   height: 100vh;
   position: absolute;
   width: 100vw;
 }
-.main-dashboard{
+.main-dashboard {
   background-color: white;
   height: 100vh;
   position: absolute;
@@ -15,7 +15,7 @@
 
 /* LOGIN
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.slogan {
+.login-slogan {
   text-align: center;
   font-size:1.5em;
   color: orange;
@@ -23,7 +23,7 @@
   margin-bottom: 30px;
 }
 .login-container{
-  margin-top: 65px;
+  margin-top: 100px;
 }
 .login-form {
   margin-bottom: 0;
@@ -33,7 +33,7 @@
   padding: 5%;
   background: white;
 }
-.login-btn{
+.login-btn {
   background-color: #2b3137 !important;
   border-color: #2b3137 !important;
 }
@@ -60,13 +60,13 @@
   z-index: 1;
   top: 0;
 }
-.nav-menu{
+.nav-menu {
   -webkit-transition:all 0.2s ease-in-out;
   overflow: hidden;
   width: 100%;
   height: 0;
 }
-.nav-menu._menu_open {
+.nav-menu._open {
   -webkit-transition:all 0.2s ease-in-out;
   float: left;
   height: 80px;
@@ -96,10 +96,10 @@
 
 /* DASHBOARD
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.main {
+.dashboard-container {
   margin-top: 65px;
 }
-.list-container{
+.members-list-container {
   display: none;
 }
 .mobile-members-list {
@@ -109,8 +109,8 @@
   background: white;
   z-index: 2;
   position: absolute;
-  -webkit-transition:all 0.2s ease-in-out;
   display: none;
+  -webkit-transition:all 0.2s ease-in-out;
 }
 .mobile-members-list._open {
   left: 0;
@@ -118,26 +118,25 @@
 }
 .mobile-members-close {
   font-size: 1.5em;
-  
   right: 0;
   margin-right: 10px;
 }
 .mobile-members-close._open {
   position: fixed;
 }
-.control-container {
+.random-control-container {
   padding-top: 15px;
 }
-.js-member{
+.list-member {
   margin-bottom: 0;
   border:none !important;
 }
-.random-btn{
+.random-btn {
   background-color: #2b3137 !important;
   border-color: #2b3137 !important;
   float: right;
 }
-.members-select{
+.members-select {
   width: 50%;
 }
 
@@ -148,7 +147,7 @@
   .login-container {
     margin-top: 120px;
   }
-  .slogan {
+  .login-slogan {
     font-size: 2em;
     text-align: right;
   }
@@ -156,13 +155,13 @@
 
 /* Larger than tablet */
 @media (min-width: 750px) {
-	.main {
+	.dashboard-container {
     margin-top: 120px;
   }
   .login-form {
 		width: 75%;
 	}
-  .slogan {
+  .login-slogan {
     font-size: 2.5em;
   }
   .nav-title {
@@ -186,10 +185,10 @@
     line-height: 70px;
     text-align: center;
   }
-  .list-container{
+  .members-list-container {
     display: block;
   }
-  .show-button{
+  .show-button {
     display: none;
   }
 }
@@ -198,7 +197,7 @@
   .login-container {
     margin-top: 150px;
   }
-  .slogan {
+  .login-slogan {
     font-size: 3.5em;
     text-align: right;
   }

@@ -11,7 +11,7 @@ let show_dashboard = (req, res) => {
 
     db.collection('members').find().toArray( (err, results) => {
     	res.locals.members = results
-      res.render('dashboard', { title:'This is the way!' })
+      res.render('dashboard', { title:'Randomy' })
     })
   }
   else res.redirect('/login')  

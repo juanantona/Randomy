@@ -8,7 +8,7 @@ const crypto = require( 'crypto' )
 // **************************************************************************************************************
 let show_login = (req, res) => { 
 	res.locals.message = req.session.message
-	res.render('login', { title:'This is the way!' }) 
+	res.render('login', { title:'Randomy' }) 
 }
 
 let login = (req, res) => { 

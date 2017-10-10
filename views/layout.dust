@@ -10,13 +10,12 @@
   	<link rel="stylesheet" href="stylesheets/vendors/normalize.css">
   	<link rel="stylesheet" href="stylesheets/vendors/skeleton.css">
   	<link rel="stylesheet" href="stylesheets/style.css">
+  	<!-- JS
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
   	<script type="text/javascript" src="javascripts/javascript.js"></script>
 
 	</head>
 	<body>
-	
 		{+main/}		
-	
 	</body>
-	
 </html>

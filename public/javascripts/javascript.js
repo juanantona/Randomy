@@ -50,7 +50,7 @@ window.onload = () => {
 	if (randomy_button) {
 		randomy_button.addEventListener('click', function(ev) {
 			let people_each_group = getById('peopleEachGroup').value
-			let members_list      = getByClass('list-container')
+			let members_list      = getByClass('members-list-container')
 		  let members           = Array.from( getByClass('js-member', members_list) )
 	 	  let groups_textarea   = getByClass('js-groups-result')
 	 	  
@@ -82,7 +82,7 @@ window.onload = () => {
 	if (show_menu_button) {
 		show_menu_button.addEventListener('click', (ev) => {
 			ev.preventDefault();
-			changeClass(nav_element, '_menu_open')
+			changeClass(nav_element, '_open')
 		})
 	}	
 
