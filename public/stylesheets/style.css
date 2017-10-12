@@ -124,6 +124,9 @@
 .mobile-members-close._open {
   position: fixed;
 }
+.mobile-members-list input{
+  width: 100%
+}
 .random-control-container {
   padding-top: 15px;
 }
