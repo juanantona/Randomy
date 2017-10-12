@@ -9,8 +9,8 @@ let show_dashboard = (req, res) => {
     res.locals.user = req.session.user.name
     res.locals.people_each_group = Array.from({ length: 10 }, (v, k) => k+1); 
 
-    db.collection('members').find().toArray( (err, results) => {
-    	res.locals.members = results
+    db.collection('members').find().toArray( (err, members) => {
+    	res.locals.members = members.sort( (f1, f2) => { return f1.name.localeCompare(f2.name) })
       res.render('dashboard', { title:'Randomy' })
     })
   }
