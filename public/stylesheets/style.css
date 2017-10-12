@@ -109,12 +109,10 @@
   background: white;
   z-index: 2;
   position: absolute;
-  display: none;
   -webkit-transition:all 0.2s ease-in-out;
 }
 .mobile-members-list._open {
   left: 0;
-  display: block;
 }
 .mobile-members-close {
   font-size: 1.5em;

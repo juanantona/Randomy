@@ -25,7 +25,9 @@
 			</div>
 		</div>
 	</div>
-	
+</main>
+
+<mobile-layer>
 	<div class="container mobile-members-list">
 		<div class="row">
 			<div class="twelve colums">
@@ -39,5 +41,5 @@
 				{>"members" /}
 			</div>
 		</div>	
-	</div>	
-</main>
+	</div>
+</mobile-layer>	

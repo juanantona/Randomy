@@ -16,6 +16,7 @@
 
 	</head>
 	<body>
-		{+main/}		
+		{+main/}
+		{+mobile-layer/}
 	</body>
 </html>
