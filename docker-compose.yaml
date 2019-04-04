@@ -1,0 +1,23 @@
+version: "2.1"
+
+services:
+  randomy:
+    container_name: randomy
+    restart: always
+    image: juananantona/randomy
+    links:
+      - mongo
+    command: npm start
+    ports:
+      - "3000:3000"
+  
+  mongo:
+    container_name: mongo-randomy
+    image: mongo:latest
+    volumes:
+      - mongo-data:/User/juanan/Documents/labs/data/mongo
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo-data:
