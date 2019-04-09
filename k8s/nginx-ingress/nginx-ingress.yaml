@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: randomy-ingress
+  namespace: randomy
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - backend:
+              serviceName: randomy-svc
+              servicePort: 3000
+            path: /
