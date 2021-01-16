@@ -43,10 +43,10 @@ app.get(  '/logout', login_controller.logout )
 const MongoClient       = require('mongodb').MongoClient
 const db_connection_url = (is_production)? process.env.MONGODB_URI : 'mongodb://127.0.0.1/randomy'
 
-MongoClient.connect(db_connection_url, (err, database) => {
+MongoClient.connect(db_connection_url, (err, client) => {
   if (err) return console.log(err)
   console.log('DB server connected succesfully')
-  exports.db = database
+  exports.db = client.db("randomy");
 	// Server up
 	app.listen(app.get('port'), () => {
 		console.log('App server running on port', app.get('port'))
