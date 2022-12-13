@@ -7,7 +7,7 @@
     "crypto": "0.0.3",
     "dustjs-helpers": "^1.7.3",
     "dustjs-linkedin": "^2.7.5",
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "express-session": "^1.15.3",
     "mongodb": ">=3.1.13"
   },
